@@ -105,6 +105,7 @@ export class AstraiosGraphClient implements GraphClient {
   }
 
   public saveOrUpdate(graph: Graph): Promise<Graph> {
+    return graph.id == null ? create(graph) : update(graph);
     return this.saveOrUpdateNodes(graph.nodes).then((nodeIdMap) => {
       return this.saveOrUpdateLinks(graph.links, nodeIdMap).then((linkIdMap) => {
         return this.saveOrUpdateGraph(graph, nodeIdMap, linkIdMap).then((response) => {

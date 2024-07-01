@@ -92,7 +92,7 @@ in one API call_:
   <TabItem value="request" label="Mutation" default>
     ```graphql
     mutation {
-       user(op: UPSERT, data: {oidcId: "sd9Jyud"}) {
+       user(op: UPSERT, data: {id: 1, oidcId: "sd9Jyud"}) {
           edges {
              node {
                 id
@@ -137,7 +137,7 @@ in one API call_:
           }
        }
     }
-    
+
     fragment nodeAttributes on Node {
        id
        fields
@@ -166,17 +166,17 @@ in one API call_:
                                 "edges":[
                                     {
                                         "node":{
-                                            "id":"1",
+                                            "id":"5",
                                             "links":{
                                                 "edges":[
                                                     {
                                                         "node":{
-                                                            "id":"1",
+                                                            "id":"5",
                                                             "source":{
                                                                 "edges":[
                                                                     {
                                                                         "node":{
-                                                                            "id":"1",
+                                                                            "id":"9",
                                                                             "fields":"{\"name\": \"source node\", \"description\": \"my source node\", \"labels\": \"[\\\"label1\\\", \\\"[label2]\\\"]\"}",
                                                                             "onCanvasId":"kjGUgyf",
                                                                             "note":{
@@ -196,7 +196,7 @@ in one API call_:
                                                                 "edges":[
                                                                     {
                                                                         "node":{
-                                                                            "id":"2",
+                                                                            "id":"10",
                                                                             "fields":"{\"name\": \"target node\", \"description\": \"my target node\", \"labels\": \"[\\\"label1\\\", \\\"[label2]\\\"]\"}",
                                                                             "onCanvasId":"IuJeIf3",
                                                                             "note":{
@@ -261,7 +261,7 @@ Making Calls
 
 An Astraios client should support the following operations:
 
-### Fetching User by OAuth sub Field
+### Fetching User by OAuth sub Field (User ID)
 
 <Tabs>
   <TabItem value="request" label="Request" default>
